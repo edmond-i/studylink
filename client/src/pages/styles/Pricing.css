@@ -1,0 +1,308 @@
+/* ============================================
+   PRICING PAGE STYLES
+   ============================================ */
+
+.pricing-page {
+  padding: 2rem 0;
+}
+
+/* Hero Section */
+.pricing-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  border-radius: 12px;
+}
+
+.pricing-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  color: var(--text);
+}
+
+.pricing-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* Pricing Container */
+.pricing-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Pricing Cards */
+.pricing-card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.pricing-card:not(.free-plan):hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(3, 239, 98, 0.2);
+}
+
+.pricing-card.popular {
+  border: 2px solid var(--primary);
+  background: linear-gradient(135deg, rgba(3, 239, 98, 0.1), rgba(102, 184, 255, 0.05));
+}
+
+.popular-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: var(--on-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Plan Header */
+.plan-header {
+  margin-bottom: 1.5rem;
+}
+
+.plan-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--text);
+}
+
+.plan-price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--primary);
+}
+
+.plan-price span {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.plan-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* Features List */
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  flex: 1;
+}
+
+.features-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.features-list li.unavailable {
+  opacity: 0.5;
+  color: var(--text-muted);
+}
+
+.features-list svg {
+  color: #00c896;
+  flex-shrink: 0;
+}
+
+.features-list li.unavailable svg {
+  color: var(--text-muted);
+}
+
+/* Plan Button */
+.plan-button {
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.plan-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.pricing-card.free-plan .plan-button:disabled {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+.plan-ends-at {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Loading State */
+.pricing-loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+}
+
+/* Subscription Info */
+.subscription-info {
+  padding: 2rem;
+  background: rgba(3, 239, 98, 0.1);
+  border: 1px solid rgba(3, 239, 98, 0.2);
+  margin-bottom: 2rem;
+}
+
+.info-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.info-icon {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.info-text {
+  flex: 1;
+}
+
+.info-text h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.info-text p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.cancellation-warning {
+  color: #ff6b6b;
+  margin-top: 0.5rem;
+}
+
+/* FAQ Section */
+.pricing-faq {
+  margin-top: 4rem;
+  padding: 2rem;
+  background: rgba(3, 239, 98, 0.05);
+  border-radius: 12px;
+}
+
+.pricing-faq h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 2rem 0;
+  color: var(--text);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.faq-item {
+  padding: 1.5rem;
+  background: var(--surface);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.faq-item h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.faq-item p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .pricing-title {
+    font-size: 1.75rem;
+  }
+
+  .pricing-container {
+    grid-template-columns: 1fr;
+  }
+
+  .info-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pricing-card {
+    padding: 1.5rem;
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 475px) {
+  .pricing-hero {
+    padding: 1rem;
+  }
+
+  .pricing-title {
+    font-size: 1.35rem;
+  }
+
+  .pricing-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .plan-name {
+    font-size: 1.25rem;
+  }
+
+  .plan-price {
+    font-size: 2rem;
+  }
+
+  .features-list li {
+    font-size: 0.85rem;
+  }
+
+  .pricing-faq {
+    padding: 1rem;
+  }
+
+  .faq-item {
+    padding: 1rem;
+  }
+}

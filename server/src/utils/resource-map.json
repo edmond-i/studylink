@@ -1,0 +1,34 @@
+{
+  "derivatives": {
+    "title": "Derivatives — Khan Academy",
+    "url": "https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-1-new"
+  },
+  "css-flexbox": {
+    "title": "CSS Flexbox — W3Schools",
+    "url": "https://www.w3schools.com/css/css3_flexbox.asp"
+  },
+  "javascript-arrays": {
+    "title": "JavaScript Arrays — W3Schools",
+    "url": "https://www.w3schools.com/js/js_arrays.asp"
+  },
+  "linear-algebra": {
+    "title": "Linear Algebra — MIT OpenCourseWare",
+    "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/"
+  },
+  "python-basics": {
+    "title": "Python for Beginners — Python.org",
+    "url": "https://www.python.org/about/gettingstarted/"
+  },
+  "html-fundamentals": {
+    "title": "HTML Fundamentals — MDN Web Docs",
+    "url": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+  },
+  "react-hooks": {
+    "title": "React Hooks — Official React Docs",
+    "url": "https://react.dev/reference/react/hooks"
+  },
+  "git-tutorial": {
+    "title": "Git — Official Documentation",
+    "url": "https://git-scm.com/doc"
+  }
+}

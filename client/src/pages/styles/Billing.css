@@ -1,0 +1,326 @@
+/* ============================================
+   BILLING PAGE STYLES
+   ============================================ */
+
+.billing-page {
+  padding: 2rem 0;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 0.95rem;
+}
+
+.back-button:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Header */
+.billing-header {
+  margin-bottom: 2rem;
+}
+
+.billing-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  color: var(--text);
+}
+
+.billing-header p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Container */
+.billing-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Plan Card */
+.plan-card {
+  padding: 2rem;
+}
+
+.plan-card.premium {
+  background: linear-gradient(135deg, rgba(3, 239, 98, 0.1), rgba(102, 184, 255, 0.05));
+  border: 1px solid rgba(3, 239, 98, 0.2);
+}
+
+.plan-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.plan-icon {
+  font-size: 3rem;
+  min-width: 60px;
+  text-align: center;
+}
+
+.plan-details {
+  flex: 1;
+}
+
+.current-plan {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0 0 0.25rem 0;
+  color: var(--text);
+}
+
+.plan-status {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Billing Info */
+.billing-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: rgba(3, 239, 98, 0.05);
+  border-radius: 6px;
+}
+
+.info-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Cancellation Notice */
+.cancellation-notice {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  border-radius: 6px;
+  color: #ff6b6b;
+}
+
+.cancellation-notice svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.notice-title {
+  margin: 0 0 0.25rem 0;
+  font-weight: 700;
+  color: #ff6b6b;
+}
+
+.notice-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 107, 107, 0.9);
+}
+
+/* Plan Actions */
+.plan-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.plan-actions button {
+  flex: 1;
+  min-width: 200px;
+}
+
+.plan-actions .confirm-cancel {
+  background: #ff6b6b;
+  border-color: #ff6b6b;
+  color: white;
+}
+
+.plan-actions .confirm-cancel:hover {
+  background: #e74c3c;
+  border-color: #e74c3c;
+}
+
+/* Upgrade Section */
+.upgrade-section {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.upgrade-section p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* Features Summary */
+.features-summary {
+  padding: 2rem;
+}
+
+.features-summary h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  color: var(--text);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.benefit {
+  display: flex;
+  gap: 1rem;
+}
+
+.benefit svg {
+  color: #00c896;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.benefit h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.benefit p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Billing History */
+.billing-history {
+  padding: 2rem;
+}
+
+.billing-history h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: var(--text);
+}
+
+.history-note {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* Invoice Section */
+.invoice-section {
+  padding: 2rem;
+  background: rgba(3, 239, 98, 0.05);
+  border: 1px solid rgba(3, 239, 98, 0.2);
+}
+
+.invoice-section h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  color: var(--text);
+}
+
+.invoice-note {
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Loading State */
+.billing-loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .plan-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-row {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .plan-actions {
+    flex-direction: column;
+  }
+
+  .plan-actions button {
+    min-width: auto;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 475px) {
+  .current-plan {
+    font-size: 1.35rem;
+  }
+
+  .plan-icon {
+    font-size: 2rem;
+  }
+
+  .features-summary {
+    padding: 1.5rem;
+  }
+
+  .benefit {
+    gap: 0.75rem;
+  }
+
+  .billing-history {
+    padding: 1.5rem;
+  }
+
+  .invoice-section {
+    padding: 1.5rem;
+  }
+}

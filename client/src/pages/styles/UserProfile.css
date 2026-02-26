@@ -1,0 +1,364 @@
+/* ============================================
+   USER PROFILE STYLES
+   ============================================ */
+
+.user-profile {
+  padding: 2rem 0;
+}
+
+.back-to-leaderboard {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+.back-to-leaderboard:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Profile Header */
+.profile-header-card {
+  padding: 2rem !important;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, rgba(3, 239, 98, 0.1), rgba(102, 184, 255, 0.05));
+  border: 1px solid rgba(3, 239, 98, 0.2);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-avatar-section {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.profile-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  object-fit: cover;
+  background: var(--border);
+}
+
+.profile-rank-badge {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  border: 3px solid var(--bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--on-primary);
+  font-size: 0.9rem;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  color: var(--text);
+}
+
+.profile-rank-title {
+  font-size: 1.1rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.profile-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.meta-item svg {
+  color: var(--primary);
+}
+
+/* Profile Container */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Stats Section */
+.stats-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.stat-name {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Badges Section */
+.badges-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.badge-card {
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.badge-card:hover {
+  transform: translateY(-4px);
+}
+
+.badge-card.common {
+  border-color: var(--text-muted);
+}
+
+.badge-card.rare {
+  background: rgba(102, 184, 255, 0.05);
+  border-color: var(--accent);
+}
+
+.badge-card.epic {
+  background: rgba(3, 239, 98, 0.1);
+  border-color: var(--primary);
+}
+
+.badge-card.legendary {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(3, 239, 98, 0.1));
+  border-color: #ffd700;
+}
+
+.badge-icon {
+  font-size: 3rem;
+  display: block;
+}
+
+.badge-name {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text);
+}
+
+.badge-description {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin: 0.5rem 0 0 0;
+  line-height: 1.4;
+}
+
+.badge-earned-at {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0.5rem 0 0 0;
+}
+
+.no-badges {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* Achievements Section */
+.achievements-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.locked-achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.locked-badge {
+  padding: 1.5rem;
+  text-align: center;
+  border: 2px dashed var(--border);
+  opacity: 0.6;
+}
+
+.locked-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.locked-badge h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--text);
+}
+
+.locked-badge p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0 0 1rem 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--surface);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-avatar {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-rank-badge {
+    width: 40px;
+    height: 40px;
+    font-size: 0.8rem;
+  }
+
+  .profile-name {
+    font-size: 1.5rem;
+  }
+
+  .profile-meta {
+    justify-content: center;
+  }
+
+  .badges-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .locked-achievements {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 475px) {
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profile-rank-badge {
+    width: 35px;
+    height: 35px;
+    font-size: 0.7rem;
+    bottom: -5px;
+    right: -5px;
+  }
+
+  .profile-name {
+    font-size: 1.25rem;
+  }
+
+  .profile-meta {
+    gap: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .badges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .locked-achievements {
+    grid-template-columns: 1fr;
+  }
+}

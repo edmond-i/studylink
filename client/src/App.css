@@ -1,0 +1,9 @@
+.loading-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+}

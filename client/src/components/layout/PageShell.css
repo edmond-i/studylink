@@ -1,0 +1,39 @@
+.page-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg);
+}
+
+.page-container {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.page-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  max-width: 100%;
+}
+
+/* Desktop: sidebar visible by default */
+@media (min-width: 769px) {
+  .page-content {
+    margin-left: 240px;
+  }
+}
+
+/* Tablet & Mobile: responsive adjustments */
+@media (max-width: 768px) {
+  .page-content {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 475px) {
+  .page-content {
+    padding: 16px;
+  }
+}
