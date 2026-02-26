@@ -1,4 +1,4 @@
-# 🚀 StudyLink — Academic Social-Learning Platform
+# StudyLink — Academic Social-Learning Platform
 
 A next-generation platform combining Reddit-style forums, Slack-style study groups, DataCamp gamification, and an AI Socratic tutor.
 
