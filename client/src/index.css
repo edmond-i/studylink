@@ -63,6 +63,29 @@
   }
 }
 
+/* Explicit light theme when html has .light class (overrides prefers-color-scheme) */
+html.light {
+  --bg: #f4f8fb;
+  --surface: #ffffff;
+  --surface-2: #edf3f8;
+  --border: #d2deea;
+
+  --primary: #03c75f;
+  --primary-light: #02ac53;
+  --primary-glow: rgba(3, 199, 95, 0.2);
+  --on-primary: #032114;
+
+  --accent: #2f6ff0;
+  --cyan: #2f6ff0;
+  --green: #03c75f;
+  --amber: #b88200;
+
+  --text: #13273f;
+  --text-secondary: #4e6684;
+  --text-muted: #7a8fa9;
+  --error: #d92d20;
+}
+
 * {
   margin: 0;
   padding: 0;

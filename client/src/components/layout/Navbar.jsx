@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { BookOpen, Menu, X, LogOut, Settings, Zap } from 'lucide-react';
+import { BookOpen, Menu, X, LogOut, Settings, Zap, Sun, Moon } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import NotificationCenter from '../ui/NotificationCenter';
+import { toggleTheme } from '../../theme';
+import { useEffect } from 'react';
+import { detectAndApplyTheme } from '../../theme';
 import './Navbar.css';
 
 /**
@@ -11,6 +14,7 @@ import './Navbar.css';
 function Navbar({ onMenuToggle, isMobileMenuOpen }) {
   const { user, logout } = useAuth();
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState('dark');
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -18,6 +22,16 @@ function Navbar({ onMenuToggle, isMobileMenuOpen }) {
     logout();
     navigate('/');
   }
+
+  useEffect(() => {
+    const current = detectAndApplyTheme();
+    setTheme(current);
+  }, []);
+
+  const handleToggleTheme = () => {
+    const next = toggleTheme();
+    setTheme(next);
+  };
 
   return (
     <nav className="navbar">
@@ -40,6 +54,9 @@ function Navbar({ onMenuToggle, isMobileMenuOpen }) {
             <span>{user?.xp || 0}</span>
           </div>
           <NotificationCenter />
+          <button className="theme-toggle" onClick={handleToggleTheme} aria-label="Toggle theme">
+            {theme === 'light' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
           <div className="user-menu">
             <button
               className="user-button"

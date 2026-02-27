@@ -2,6 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
+import { detectAndApplyTheme } from './theme';
+
+// apply theme before React mounts so initial paint matches preference
+if (typeof window !== 'undefined') {
+  try {
+    detectAndApplyTheme();
+  } catch (e) {}
+}
 
 if (import.meta.env.PROD && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
