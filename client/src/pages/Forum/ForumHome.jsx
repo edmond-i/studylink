@@ -61,9 +61,8 @@ function ForumHome() {
             <MessageSquare size={32} />
             Community Forum
           </h1>
-          <p className="hero-subtitle">
-            Ask questions, share knowledge, and learn with peers
-          </p>
+          {/* subtitle removed per design feedback; text was flashing as
+              page loaded and created a distracting floating sentence */}
           <Button
             size="lg"
             onClick={() => navigate('/forum/create')}
