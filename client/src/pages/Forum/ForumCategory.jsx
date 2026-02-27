@@ -83,7 +83,7 @@ function ForumCategory() {
       <div className="forum-header">
         <div className="forum-title-section">
           <h1 className="forum-title">{category?.name || 'Forum'}</h1>
-          <p className="forum-subtitle">Ask questions, share knowledge, learn together</p>
+          {/* subtitle removed to avoid duplicate/stray sentence */}
         </div>
 
         <Button
