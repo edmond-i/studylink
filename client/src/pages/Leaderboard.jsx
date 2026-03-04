@@ -4,12 +4,29 @@ import Card from '../components/ui/Card';
 import { api } from '../services/api';
 import './styles/Leaderboard.css';
 
+const AVATAR_EMOJIS = ['🦊', '🐼', '🦉', '🐧', '🐯', '🦁', '🐨', '🐝', '🐬', '🦖', '🦄', '🐢'];
+
+function hashSeed(seed = '') {
+  let hash = 0;
+  for (let i = 0; i < seed.length; i += 1) {
+    hash = (hash * 31 + seed.charCodeAt(i)) >>> 0;
+  }
+  return hash;
+}
+
+function getInitials(name = '') {
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return '';
+  return parts.slice(0, 2).map((part) => part.charAt(0).toUpperCase()).join('');
+}
+
 function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState([]);
   const [stats, setStats] = useState(null);
   const [timeframe, setTimeframe] = useState('all');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [avatarLoadErrors, setAvatarLoadErrors] = useState({});
 
   useEffect(() => {
     fetchLeaderboard();
@@ -23,6 +40,7 @@ function Leaderboard() {
         params: { timeframe, limit: 50 },
       });
       setLeaderboard(response.data.leaderboard);
+      setAvatarLoadErrors({});
     } catch (err) {
       setError(err.message || 'Failed to load leaderboard');
       console.error('Error fetching leaderboard:', err);
@@ -45,6 +63,22 @@ function Leaderboard() {
     if (rank === 2) return 'rank-silver';
     if (rank === 3) return 'rank-bronze';
     return 'rank-normal';
+  };
+
+  const handleAvatarError = (userId) => {
+    setAvatarLoadErrors((current) => {
+      if (current[userId]) return current;
+      return { ...current, [userId]: true };
+    });
+  };
+
+  const getFallbackAvatar = (user) => {
+    const seed = `${user?.id ?? ''}-${user?.name ?? ''}-${user?.email ?? ''}`;
+    const hash = hashSeed(seed);
+    const initials = getInitials(user?.name ?? '');
+
+    if (initials && hash % 2 === 1) return initials;
+    return AVATAR_EMOJIS[hash % AVATAR_EMOJIS.length];
   };
 
   if (error) {
@@ -149,7 +183,22 @@ function Leaderboard() {
                       </td>
                       <td className="name-col">
                         <div className="user-info">
-                          <img src={entry.user.avatar} alt={entry.user.name} className="user-avatar" />
+                          {entry.user.avatar && !avatarLoadErrors[entry.user.id] ? (
+                            <img
+                              src={entry.user.avatar}
+                              alt={entry.user.name}
+                              className="user-avatar"
+                              onError={() => handleAvatarError(entry.user.id)}
+                            />
+                          ) : (
+                            <div
+                              className="user-avatar user-avatar-fallback"
+                              role="img"
+                              aria-label={`${entry.user.name} avatar fallback`}
+                            >
+                              {getFallbackAvatar(entry.user)}
+                            </div>
+                          )}
                           <span className="user-name">{entry.user.name}</span>
                         </div>
                       </td>

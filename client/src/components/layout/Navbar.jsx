@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BookOpen, Menu, X, LogOut, Settings, Zap, Sun, Moon } from 'lucide-react';
 import { useAuth } from '../../hooks/useAuth';
 import NotificationCenter from '../ui/NotificationCenter';
@@ -16,7 +16,6 @@ function Navbar({ onMenuToggle, isMobileMenuOpen }) {
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const [theme, setTheme] = useState('dark');
   const navigate = useNavigate();
-  const location = useLocation();
 
   function handleLogout() {
     logout();
@@ -41,10 +40,10 @@ function Navbar({ onMenuToggle, isMobileMenuOpen }) {
           <button className="hamburger" onClick={onMenuToggle} aria-label="Toggle menu">
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
-          <div className="logo-container">
+          <Link className="logo-container" to="/" aria-label="Go to StudyLink home">
             <BookOpen size={28} />
             <span className="logo-text">StudyLink</span>
-          </div>
+          </Link>
         </div>
 
         {/* User Menu */}

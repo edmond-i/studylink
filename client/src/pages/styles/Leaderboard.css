@@ -202,6 +202,23 @@
   object-fit: cover;
 }
 
+.user-avatar-fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--primary) 32%, var(--border));
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--primary) 18%, var(--surface)),
+    color-mix(in srgb, var(--accent) 14%, var(--surface))
+  );
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1;
+  user-select: none;
+}
+
 .user-name {
   color: var(--text);
   font-weight: 600;
